@@ -31,7 +31,9 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/assets/img/escudo.png",
               {
+    
                 "glob": "**/*",
                 "input": "public"
               }
@@ -102,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

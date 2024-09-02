@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.bg-red-peru{
+    background-color: #b82c25;
+}
+.bg-gray-peru{
+    background-color: #edf0f4;
+}

@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="title">
+        <h4>Material Bibliografico</h4>
+        <button type="button" class="btn btn-success" routerLink="/add">Agregar Libro</button>
+
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">TITULO</th>
+                <th scope="col">AUTOR</th>
+                <th scope="col">STOCK</th>
+                <th scope="col">ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listBook">
+                <td>{{ item.title}}</td>
+                <td>{{ item.author}}</td>
+                <td>{{ item.stock}}</td>
+                <td>
+                    <button type="button" class="btn btn-info btn-sm">VER</button>
+                    <button type="button" routerLink="/edit/{{item.id}}"
+                        class="btn btn-warning  btn-sm ms-2">EDITAR</button>
+                    <button type="button" class="btn btn-primary  btn-sm ms-2">ELIMINAR</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
