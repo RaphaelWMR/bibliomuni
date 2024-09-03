@@ -6,4 +6,6 @@ Primero correr  para instalar las dependencias
 npm install
 ```
 luego
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+tipear 
+```ng serve``` 
+para lanzarlo en `http://localhost:4200/`.
