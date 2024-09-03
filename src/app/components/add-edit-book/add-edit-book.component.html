@@ -3,16 +3,16 @@
         <div class="card border-primary mb-3" style="max-width: 25rem;">
             <div class="card-header text-center">Agregar Libro</div>
             <div class="card-body">
-                <form action="">
-                    <input type="text" class="form-control" placeholder="Ingrese el titulo">
-                    <input type="text" class="form-control mt-2" placeholder="Ingrese el autor">
-                    <input type="text" class="form-control mt-2" placeholder="Ingrese el stock">
+                <form action="" [formGroup]="form" (ngSubmit)="addBook()">
+                    <input type="text" formControlName="title" class="form-control" placeholder="Ingrese el titulo">
+                    <input type="text" formControlName="author" class="form-control mt-2" placeholder="Ingrese el autor">
+                    <input type="text" formControlName="stock" class="form-control mt-2" placeholder="Ingrese el stock">
                     <div class="row mt-2 text-center">
                         <div class="col lg-6">
-                            <button routerLink="/" type="button" class="btn btn-primary">Aceptar</button>
+                            <button type="submit" class="btn btn-primary">Aceptar</button>
                         </div>
                         <div class="col lg-6">
-                            <button type="button" class="btn btn-secondary">Volver</button>
+                            <button routerLink="/" type="button" class="btn btn-secondary">Volver</button>
                         </div>
                     </div>
                 </form>

@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListBooksComponent } from './components/list-books/list-books.component';
 import { AddEditBookComponent } from './components/add-edit-book/add-edit-book.component';
 import { HttpClientModule } from '@angular/common/http'; // Importa el módulo HttpClientModule
+import { ReactiveFormsModule } from '@angular/forms';  // <-- Importa ReactiveFormsModule aquí
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http'; // Importa el módulo H
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

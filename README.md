@@ -7,5 +7,7 @@ npm install
 ```
 luego
 tipear 
-```ng serve``` 
+```bash
+ng serve
+``` 
 para lanzarlo en `http://localhost:4200/`.
