@@ -19,7 +19,8 @@
                 <td>{{ item.author}}</td>
                 <td>{{ item.stock}}</td>
                 <td>
-                    <button type="button" class="btn btn-info btn-sm">VER</button>
+                    <button (click)="updateBook(item.id || 0)" type="button"
+                        class="btn btn-info btn-sm">VER</button>
                     <button type="button" routerLink="/edit/{{item.id}}"
                         class="btn btn-warning  btn-sm ms-2">EDITAR</button>
                     <button (click)="deleteBook(item.id!)" type="button"

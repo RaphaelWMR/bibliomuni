@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../../interfaces/book';
 import { BookService } from '../../services/book.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-books',
@@ -28,7 +29,9 @@ export class ListBooksComponent implements OnInit {
     },
   ];
 
-  constructor(private _bookService: BookService) {
+  constructor(private _bookService: BookService,
+    private router: Router
+  ) {
 
   }
   ngOnInit(): void {
@@ -41,6 +44,9 @@ export class ListBooksComponent implements OnInit {
       this.listBook = data;
     });
 
+  }
+  updateAlumno(id: number) {
+    this.router.navigate(['/edit', id]);
   }
 
   deleteBook(id: number) {
