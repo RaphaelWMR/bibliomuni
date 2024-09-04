@@ -1,7 +1,7 @@
 <div class="row mt-1">
     <div class="col-lg-4 offset-lg-4">
         <div class="card border-primary mb-3" style="max-width: 25rem;">
-            <div class="card-header text-center">Agregar Libro</div>
+            <div class="card-header text-center">{{operacion}} Libro</div>
             <div class="card-body">
                 <form action="" [formGroup]="form" (ngSubmit)="addBook()">
                     <input type="text" formControlName="title" class="form-control" placeholder="Ingrese el titulo">

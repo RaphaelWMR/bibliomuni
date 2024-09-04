@@ -28,6 +28,7 @@ export class ListBooksComponent implements OnInit {
       stock: 15
     },
   ];
+  
 
   constructor(private _bookService: BookService,
     private router: Router
@@ -45,7 +46,7 @@ export class ListBooksComponent implements OnInit {
     });
 
   }
-  updateAlumno(id: number) {
+  updateBook(id: number) {
     this.router.navigate(['/edit', id]);
   }
 
