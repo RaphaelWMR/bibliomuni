@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, retry } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Book } from '../interfaces/book';
 import { environment } from '../../environments/environment';
 
@@ -14,7 +14,7 @@ export class BookService {
     this.myAppUrl = environment.endpoint;
     this.myApiUrl = 'api/books/';
   }
-  
+
   getListBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(`${this.myAppUrl}${this.myApiUrl}`);
   }

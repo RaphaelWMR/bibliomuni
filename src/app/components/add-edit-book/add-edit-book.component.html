@@ -4,8 +4,16 @@
             <div class="card-header text-center">{{operacion}} Libro</div>
             <div class="card-body">
                 <form action="" [formGroup]="form" (ngSubmit)="addBook()">
-                    <input type="text" formControlName="title" class="form-control" placeholder="Ingrese el titulo">
-                    <input type="text" formControlName="author" class="form-control mt-2" placeholder="Ingrese el autor">
+                    <div *ngIf="operacion=='Agregar '">
+                        <input type="text" formControlName="isbn" class="form-control" placeholder="Ingrese el ISBN">
+                        <div class="col lg-6 mt-2 text-center">
+                            <button type="button" class="btn btn-info" (click)="getDataBook()">Buscar</button>
+                        </div>
+                    </div>
+                    <input type="text" formControlName="title" class="form-control mt-2"
+                        placeholder="Ingrese el titulo">
+                    <input type="text" formControlName="author" class="form-control mt-2"
+                        placeholder="Ingrese el autor">
                     <input type="text" formControlName="stock" class="form-control mt-2" placeholder="Ingrese el stock">
                     <div class="row mt-2 text-center">
                         <div class="col lg-6">

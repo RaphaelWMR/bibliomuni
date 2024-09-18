@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../interfaces/book';
+import { IsbnService } from '../../services/isbn.service';
 
 @Component({
   selector: 'app-add-edit-book',
@@ -17,12 +18,14 @@ export class AddEditBookComponent {
     (private router: Router,
       private fb: FormBuilder,
       private _bookService: BookService,
+      private _bookByISBNService: IsbnService,
       private aRouter: ActivatedRoute
     ) {
     this.form = this.fb.group({
       title: ['', Validators.required],
       author: ['', Validators.required],
       stock: ['', Validators.required],
+      isbn: ['']
     });
     this.id = Number(aRouter.snapshot.paramMap.get('id'));
   }
@@ -66,7 +69,17 @@ export class AddEditBookComponent {
         title: data.title,
         author: data.author,
         stock: data.stock,
-
+      })
+    })
+  }
+  getDataBook() {
+    this._bookByISBNService.getBookByIsbn(this.form.value.isbn ?? '01').subscribe((data: Book) => {
+      console.log("Book: ", data);
+      this.form.setValue({
+        title: data.title,
+        author: data.author,
+        stock: '',
+        isbn: this.form.value.isbn
       })
     })
   }
