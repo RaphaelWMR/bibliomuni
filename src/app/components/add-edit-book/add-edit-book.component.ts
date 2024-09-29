@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../interfaces/book';
 import { IsbnService } from '../../services/isbn.service';
+import { PortraitService } from '../../services/portrait.service';
 
 @Component({
   selector: 'app-add-edit-book',
@@ -14,11 +15,13 @@ export class AddEditBookComponent {
   form: FormGroup;
   id: number;
   operacion: string = 'Agregar ';
+  bookCoverUrl: string | null = null;  // Variable para almacenar la URL de la portada
   constructor
     (private router: Router,
       private fb: FormBuilder,
       private _bookService: BookService,
       private _bookByISBNService: IsbnService,
+      private _portraitService: PortraitService,
       private aRouter: ActivatedRoute
     ) {
     this.form = this.fb.group({
@@ -73,16 +76,30 @@ export class AddEditBookComponent {
     })
   }
   getDataBook() {
-    this._bookByISBNService.getBookByIsbn(this.form.value.isbn ?? '01').subscribe((data: Book) => {
-      console.log("Book: ", data);
+    const isbn = this.form.value.isbn ?? '01';
+    this._bookByISBNService.getBookByIsbn(isbn).subscribe((data: Book) => {
+      console.log('Book: ', data);
       this.form.setValue({
         title: data.title,
         author: data.author,
         stock: '',
-        isbn: this.form.value.isbn
-      })
-    })
+        isbn: isbn
+      });
+      // Obtener la portada después de buscar el libro
+      this.getBookCover(isbn);
+    });
   }
-
-
+  
+  // Obtener la portada del libro usando el ISBN
+  getBookCover(isbn: string) {
+    this._portraitService.getBookCover(isbn).subscribe((data: any) => {
+      // Suponiendo que el servicio devuelve una propiedad "coverUrl"
+      this.bookCoverUrl = data.coverUrl ?? "https://m.media-amazon.com/images/I/81MmomTwghL._AC_UF894,1000_QL80_.jpg";  // Guarda la URL de la portada si está disponible
+      console.log('Portada del libro:', this.bookCoverUrl);
+    }, error => {
+      console.error('Error al obtener la portada del libro:', error);
+      this.bookCoverUrl = "https://m.media-amazon.com/images/I/81MmomTwghL._AC_UF894,1000_QL80_.jpg";  // Maneja el caso de error
+    });
+  }
+  
 }
