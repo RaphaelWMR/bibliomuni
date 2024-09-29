@@ -16,7 +16,6 @@ export class PortraitService {
   // Método para obtener la portada del libro usando ISBN
   getBookCover(isbn: string): Observable<any> {
     const url = `${this.myAppUrl}${this.myApiUrl}${isbn}`;  // Construir la URL completa
-    console.log("Portrait> ",url);
     return this.http.get(url);  // Realiza la solicitud GET a la API Flask
   }
 }

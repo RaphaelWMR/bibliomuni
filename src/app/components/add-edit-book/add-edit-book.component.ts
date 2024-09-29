@@ -89,17 +89,18 @@ export class AddEditBookComponent {
       this.getBookCover(isbn);
     });
   }
-  
+
   // Obtener la portada del libro usando el ISBN
   getBookCover(isbn: string) {
     this._portraitService.getBookCover(isbn).subscribe((data: any) => {
-      // Suponiendo que el servicio devuelve una propiedad "coverUrl"
-      this.bookCoverUrl = data.coverUrl ?? "https://m.media-amazon.com/images/I/81MmomTwghL._AC_UF894,1000_QL80_.jpg";  // Guarda la URL de la portada si está disponible
+      console.log('Respuesta completa del API:', data);  // Verificar la respuesta del API
+      this.bookCoverUrl = data.cover_url  ?? "https://m.media-amazon.com/images/I/81MmomTwghL._AC_UF894,1000_QL80_.jpg";
       console.log('Portada del libro:', this.bookCoverUrl);
     }, error => {
       console.error('Error al obtener la portada del libro:', error);
-      this.bookCoverUrl = "https://m.media-amazon.com/images/I/81MmomTwghL._AC_UF894,1000_QL80_.jpg";  // Maneja el caso de error
+      this.bookCoverUrl = "https://m.media-amazon.com/images/I/81MmomTwghL._AC_UF894,1000_QL80_.jpg";
     });
   }
-  
+
+
 }
