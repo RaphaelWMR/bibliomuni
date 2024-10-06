@@ -1,19 +1,25 @@
-<nav class="navbar navbar-expand-lg bg-red-peru" data-bs-theme="dark">
-  <div class="container-fluid">
-      <img src="https://scontent.flim25-1.fna.fbcdn.net/v/t39.30808-6/363424068_715095427319945_1304255531854257394_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGjtHJXOZGEZsO3tKs7vVVEgtvkSyARA4mC2-RLIBEDiVnb9uHxG-p-c1bF2JEOjtqS8_LyYChB_eGyb0NCa9CI&_nc_ohc=vXYK59tBU9YQ7kNvgGMKPeZ&_nc_ht=scontent.flim25-1.fna&oh=00_AYDBl5mgx1AEQNtKQRRjAl3xPp0G2FlRjJOCyBIEPmuWHg&oe=66D13FF0" 
-           alt="" class="img-fluid" style="max-height: 40px; margin-right: 10px;">
-      <a class="navbar-brand" href="#">Biblioteca Municipal de Huaral</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                  <a class="nav-link active" href="#">Material
-                      <span class="visually-hidden">(current)</span>
-                  </a>
-              </li>
-          </ul>
-      </div>
-  </div>
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3" href="index.html">Bibliteca Municipal</a>
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+    <!-- Navbar Search-->
+    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+        </div>
+    </form>
+    <!-- Navbar-->
+    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#!">Settings</a></li>
+                <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#!">Logout</a></li>
+            </ul>
+        </li>
+    </ul>
 </nav>

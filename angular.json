@@ -31,7 +31,10 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/assets",
               "src/assets/img/escudo.png",
+              "src/assets/img/favion.ico",
+              "src/assets/js/script.js",
               {
     
                 "glob": "**/*",

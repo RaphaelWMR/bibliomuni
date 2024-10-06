@@ -7,14 +7,16 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListBooksComponent } from './components/list-books/list-books.component';
 import { AddEditBookComponent } from './components/add-edit-book/add-edit-book.component';
 import { HttpClientModule } from '@angular/common/http'; // Importa el módulo HttpClientModule
-import { ReactiveFormsModule } from '@angular/forms';  // <-- Importa ReactiveFormsModule aquí
+import { ReactiveFormsModule } from '@angular/forms';
+import { SidebarComponent } from './components/sidebar/sidebar.component';  // <-- Importa ReactiveFormsModule aquí
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ListBooksComponent,
-    AddEditBookComponent
+    AddEditBookComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
