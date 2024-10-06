@@ -10,23 +10,6 @@ import { Router } from '@angular/router';
 })
 export class ListBooksComponent implements OnInit {
   listBook: Book[] = [
-    {
-      id: 1,
-      title: 'Pulp',
-      author: 'Bukowski',
-      stock: 5
-    },
-    {
-      id: 2,
-      title: 'Also Sprach Zarathurstra',
-      author: 'Nietchze',
-      stock: 10
-    }, {
-      id: 3,
-      title: 'Rouge et Blanc',
-      author: 'Stendhal',
-      stock: 15
-    },
   ];
   
 

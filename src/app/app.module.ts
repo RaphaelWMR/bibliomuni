@@ -8,7 +8,8 @@ import { ListBooksComponent } from './components/list-books/list-books.component
 import { AddEditBookComponent } from './components/add-edit-book/add-edit-book.component';
 import { HttpClientModule } from '@angular/common/http'; // Importa el módulo HttpClientModule
 import { ReactiveFormsModule } from '@angular/forms';
-import { SidebarComponent } from './components/sidebar/sidebar.component';  // <-- Importa ReactiveFormsModule aquí
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { FooterTemplateComponent } from './components/footer-template/footer-template.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';  // <
     NavbarComponent,
     ListBooksComponent,
     AddEditBookComponent,
-    SidebarComponent
+    SidebarComponent,
+    FooterTemplateComponent,
   ],
   imports: [
     BrowserModule,

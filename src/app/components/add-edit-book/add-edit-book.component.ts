@@ -72,6 +72,7 @@ export class AddEditBookComponent {
         title: data.title,
         author: data.author,
         stock: data.stock,
+        isbn: ''
       })
     })
   }

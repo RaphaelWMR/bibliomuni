@@ -1,23 +1,28 @@
 <main>
     <div class="container-fluid px-4">
         <h1 class="mt-4">MATERIAL BIBLIOGRÁFICO</h1>
-
+        <div class="container mb-2">
+            <div class="d-flex justify-content-end">
+                <!-- Usar d-flex y justify-content-end -->
+                <button type="button" class="btn btn-success"
+                    routerLink="/add">AGREGAR LIBRO</button>
+            </div>
+        </div>
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                 Existencias
             </div>
             <div class="card-body">
-                <table id="datatablesSimple">
+                <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>TITULO</th>
-                            <th>AUTOR</th>
-                            <th>STOCK</th>
-                            <th>ACCIONES</th>
+                            <th scope="col">TITULO</th>
+                            <th scope="col">AUTOR</th>
+                            <th scope="col">STOCK</th>
+                            <th scope="col">ACCIONES</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <tr *ngFor="let item of listBook">
                             <td>{{ item.title}}</td>
@@ -33,8 +38,9 @@
                                         class="btn btn-warning btn-sm ms-2">EDITAR</button>
                                     <button (click)="deleteBook(item.id!)"
                                         type="button"
-                                        class="btn btn-primary btn-sm ms-2">ELIMINAR</button>
-                                    <span class="badge bg-success ms-2 align-self-center">ESTADO</span>
+                                        class="btn btn-danger btn-sm ms-2">ELIMINAR</button>
+                                    <span
+                                        class="badge bg-success ms-2 align-self-center">ESTADO</span>
                                 </div>
                             </td>
                         </tr>
